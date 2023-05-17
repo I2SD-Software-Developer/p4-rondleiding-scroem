@@ -23,44 +23,55 @@ try {
 </head>
 <body>
   
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="https://www.rocvantwente.nl/">ROC</a>
-      <button class="navbar-toggler collapsed bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="toggler-icon top-bar"></span>
-        <span class="toggler-icon middle-bar"></span>
-        <span class="toggler-icon bottom-bar"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://www.rocvantwente.nl/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.rocvantwente.nl/contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.rocvantwente.nl/leslocaties.html">Locaties</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              voor volwassenen
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/opleidingen-zoeker.html">Opleidingen en cursussen</a></li>
-              <li><a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en loopbaan</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">ontdek alle studievormen</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+ 
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://www.rocvantwente.nl/">ROC</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" style="background-color: #99021A;"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="https://www.rocvantwente.nl/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.rocvantwente.nl/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.rocvantwente.nl/leslocaties.html">Locaties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://rondleiding.netlify.app/">tour</a>
+                      <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            voor volwassenen
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item"
+                                    href="https://www.rocvantwente.nl/voor-volwassenen/opleidingen-zoeker.html">Opleidingen
+                                    en cursussen</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en
+                                    loopbaan</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">ontdek
+                                    alle studievormen</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
   <div class="text-center">
     <img src="roc-van-twente.png" alt="logo" style= "width: 170px; z-index: 0;" class="rounded mt-5">
     </div>
@@ -124,8 +135,17 @@ try {
         }
     }
     ?>
-    
-    <footer class="text-center text-white fixed-bottom" style= "background: linear-gradient(90deg, #0082ca, 50%, #280080);">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>   
+    <footer class="text-center text-white sticky-bottom" style= "background: linear-gradient(90deg, #0082ca, 50%, #280080); ">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->
