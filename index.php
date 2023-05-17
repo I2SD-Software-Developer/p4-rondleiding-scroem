@@ -32,6 +32,9 @@ try {
         <label for="email">E-mail:</label>
         <input type="email" name="email" id="email" required><br><br>
         
+        <label for="datum">Datum:</label>
+        <input type="date" name="datum" id="datum" required><br><br>
+        
         <label for="tijd">Beschikbare tijden:</label>
         <select name="tijd" id="tijd" required>
             <option value="9-15">9:00 - 15:00</option>
@@ -39,34 +42,39 @@ try {
             <option value="7-16">7:00 - 16:00</option>
         </select><br><br>
         
-        <input type="submit" name="submit " value="Submit">
+        <input type="submit" name="submit" value="Submit">
     </form>
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $voornaam = $_POST["voornaam"];
         $achternaam = $_POST["achternaam"];
         $email = $_POST["email"];
+        $datum = $_POST["datum"];
         $tijd = $_POST["tijd"];
 
         $volledigeNaam = $voornaam . " " . $achternaam;
 
-        $stmt = $conn->prepare("SELECT COUNT(*) FROM aanmelding WHERE email = :email");
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM aanmelding WHERE email = :email AND datum = :datum AND tijd = :tijd");
         $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':datum', $datum);
+        $stmt->bindParam(':tijd', $tijd);
         $stmt->execute();
         $count = $stmt->fetchColumn();
 
         if ($count > 0) {
-            echo "Dit e-mailadres is al aangemeld.";
+            ?> <p><?php echo "U heeft al aangemeld op deze dag en tijd."; ?></p> <?php
         } else {
             try {
-                $stmt = $conn->prepare("INSERT INTO aanmelding (naam, email, tijd) VALUES (:volledigeNaam, :email, :tijd)");
+                $stmt = $conn->prepare("INSERT INTO aanmelding (naam, email, datum, tijd) VALUES (:volledigeNaam, :email, :datum, :tijd)");
                 $stmt->bindParam(':volledigeNaam', $volledigeNaam);
                 $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':datum', $datum);
                 $stmt->bindParam(':tijd', $tijd);
                 $stmt->execute();
             } catch(PDOException $e) {
                 echo "Fout bij het aanmelden: " . $e->getMessage();
             }
+            ?> <p><?php echo "U heeft aangemeld." ?></p> <?php
         }
     }
     ?>
