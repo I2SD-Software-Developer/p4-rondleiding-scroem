@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="generator" content="Hugo 0.48" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pannellum tour</title>
+<script src="/cdn-cgi/apps/head/TEAHVq5cVsVoM9egFOAS6CBdXPk.js"></script><link rel="stylesheet" href="https://pannellum.org/css/bootstrap.min.css">
+<script type="text/javascript" src="https://pannellum.org/js/bootstrap-native.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600%7CSource+Code+Pro:400,600" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://pannellum.org/css/pygments.css">
+<link rel="stylesheet" href="https://cdn.pannellum.org/2.5/pannellum.css" />
+<script type="text/javascript" src="https://cdn.pannellum.org/2.5/pannellum.js"></script>
+<link rel="stylesheet" href="https://pannellum.org/css/style.css">
+</head>
+<body>
+
+
+<div id="panorama" style="width:100%;height:100vh;"></div>
+<script>
+pannellum.viewer('panorama', {   
+    "default": {
+        "firstScene": "lift",
+        "sceneFadeDuration": 1000,
+        "autoLoad": true,
+    },
+    
+    "scenes": {
+        "lift": {
+            "type": "equirectangular",
+            "panorama": "asset/demo-1.jpg",
+            "showZoomCtrl": false,
+            "pitch": -9.318996005588108,
+            "yaw": -44.851059750622944,
+            "hotSpots": [
+                {
+                    "pitch": -9.318996005588108,
+                    "yaw": -44.851059750622944,
+                    "type": "scene",
+                    "text": "Bank",
+                    "sceneId": "bank",
+                    "targetYaw": 240,
+                    "scale": true,
+                },
+                {
+                    "pitch": -13.352207309054576,
+                    "yaw": 96.36758767640615,
+                    "type": "info",
+                    "text": "monke",
+                    "sceneId": "bank",
+                    "targetYaw": 240,
+                    "scale": true,
+                },
+                {
+                    "pitch": -35.0253751624088,
+                    "yaw": -98.47535784968024,
+                    "type": "info",
+                    "text": "Hier is de foto een beetje gebugged.",
+                    "sceneId": "bank",
+                    "targetYaw": 240,
+                    "scale": true,
+                }
+            ],
+            "hotSpotDebug": false,
+        },
+
+        "bank": {
+            "type": "equirectangular",
+            "panorama": "asset/demo-2.jpg",
+            "showZoomCtrl": false,
+            "pitch": -0.5650812098148839,
+            "yaw": -0.15823224408592473,
+            "hotSpotDebug": false,
+            "hotSpots": [
+                {
+                    "pitch": -0.5650812098148839,
+                    "yaw": -0.15823224408592473,
+                    "type": "scene",
+                    "text": "Lift",
+                    "sceneId": "lift",
+                    "targetYaw": 240,
+                    "scale": true,
+                }
+            ]
+        },
+    }
+});
+</script>
+</div>
+</div>
+</div>
+</body>
+</html>
