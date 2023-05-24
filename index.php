@@ -13,32 +13,67 @@ try {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ROC Van Twente I aanmelden</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
   
- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+    <style>
+        body {
+            margin-bottom: 60px;
+        }
+        .background {
+            background-image: url("images/back.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            z-index: -1;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+  
+        footer {
+            margin-top: auto;
+        }
+    </style>
+<!--background-->
+    <div class="background"></div>
+        <style>
+            .step {
+                display: none;
+            }
+        
+            .step.show {
+                display: block;
+            }
+        </style>
+</head>
+<body class="d-flex flex-column h-100">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style= "background: linear-gradient(90deg, #990300, 50%, #d10202); ">
         <div class="container-fluid">
             <a class="navbar-brand" href="https://www.rocvantwente.nl/">ROC</a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" style="background-color: #99021A;"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="toggler-icon top-bar"></span>
-                <span class="toggler-icon middle-bar"></span>
-                <span class="toggler-icon bottom-bar"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="https://www.rocvantwente.nl/">Home</a>
-                    </li>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="background-color: #99021A; border: none;" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://www.rocvantwente.nl/">Home</a>
+                </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.rocvantwente.nl/contact.html">Contact</a>
                     </li>
@@ -49,162 +84,236 @@ try {
                         <a class="nav-link" href="https://rondleiding.netlify.app/">tour</a>
                       <li class="nav-item dropdown">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            voor volwassenen
-                        </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">voor volwassenen</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item"
-                                    href="https://www.rocvantwente.nl/voor-volwassenen/opleidingen-zoeker.html">Opleidingen
-                                    en cursussen</a></li>
-                            <li><a class="dropdown-item"
-                                    href="https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en
-                                    loopbaan</a></li>
+                            <li><a class="dropdown-item"en cursussen</a></li>
+                            <li><a class="dropdown-item" href= "https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en loopbaan</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item"
-                                    href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">ontdek
-                                    alle studievormen</a></li>
+                            <li>
+                                <a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">ontdek alle studievormen</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-  <div class="text-center">
-    <img src="roc-van-twente.png" alt="logo" style= "width: 170px; z-index: 0;" class="rounded mt-5">
+<!--logo-->
+    <div class="text-center">
+    <img src="images/roc-van-twente.png" alt="logo" style= "width: 170px; z-index: 0;" class="rounded mt-5">
+    <style>
+    .border-transition {
+        transition: border-color 0.6s ease;
+    }
+
+    .fade {
+        transition: opacity 0.6s ease;
+    }
+
+    /* Add a custom CSS class to control the slow fade-out effect */
+    .slow-fade-out {
+        transition: opacity 2s ease;
+        opacity: 0;
+    }
+</style>
+
+
+<!-- Rest of the HTML code remains the same -->
+
+<div class="container">
+    <div id="formContainer" class="border border-2 rounded p-4 mt-5 border-transition fade-transition" style="background-color: rgba(252, 250, 250, 0.8);">
+        <h2 class="text-center">Aanmelden</h2>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="multiStepForm" method="POST">
+                            <div id="step1" class="step show fade-transition">
+                                <div class="form-group">
+                                    <label for="voornaam" class="form-label">Voornaam:</label>
+                                    <input class="form-control" type="text" name="voornaam" id="voornaam" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="achternaam" class="form-label">Achternaam:</label>
+                                    <input class="form-control" type="text" name="achternaam" id="achternaam" required>
+                                </div>
+                                <button type="button" class="btn btn-primary next-btn mt-3" onclick="validateStep(1)">Next</button>
+                            </div>
+                            <div id="step2" class="step fade-transition">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">E-mail:</label>
+                                    <input class="form-control" type="email" name="email" id="email" required>
+                                </div>
+                                <button type="button" class="btn btn-primary prev-btn mt-3" onclick="prevStep(2)">Previous</button>
+                                <button type="button" class="btn btn-primary next-btn mt-3" onclick="validateStep(2)">Next</button>
+                            </div>
+                            <div id="step3" class="step fade-transition">
+                                <div class="form-group">
+                                    <label for="datum" class="form-label">Datum:</label>
+                                    <input style="color: #01368a;" class="form-control" type="date" name="datum" id="datum" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tijd" class="form-label">Beschikbare tijden:</label>
+                                    <select style="color: #01368a;" class="form-control" name="tijd" id="tijd" required>
+                                        <option value="9-15">9:00 - 15:00</option>
+                                        <option value="7-16">7:00 - 16:00</option>
+                                        <option value="7-16">7:00 - 16:00</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="btn btn-primary prev-btn mt-3" onclick="prevStep(3)">Previous</button>
+                                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            </div>
+                        </form>
+                        <?php
+                            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                $voornaam = $_POST["voornaam"];
+                                $achternaam = $_POST["achternaam"];
+                                $email = $_POST["email"];
+                                $datum = $_POST["datum"];
+                                $tijd = $_POST["tijd"];
+
+                                $volledigeNaam = $voornaam . " " . $achternaam;
+
+                                $stmt = $conn->prepare("SELECT COUNT(*) FROM aanmelding WHERE email = :email AND datum = :datum AND tijd = :tijd");
+                                $stmt->bindParam(':email', $email);
+                                $stmt->bindParam(':datum', $datum);
+                                $stmt->bindParam(':tijd', $tijd);
+                                $stmt->execute();
+                                $count = $stmt->fetchColumn();
+
+                                if ($count > 0) {
+                                    echo "<p class='text-center mt-5'>U heeft al aangemeld op deze dag en tijd.</p>";
+                                } else {
+                                    try {
+                                        $stmt = $conn->prepare("INSERT INTO aanmelding (naam, email, datum, tijd) VALUES (:volledigeNaam, :email, :datum, :tijd)");
+                                        $stmt->bindParam(':volledigeNaam', $volledigeNaam);
+                                        $stmt->bindParam(':email', $email);
+                                        $stmt->bindParam(':datum', $datum);
+                                        $stmt->bindParam(':tijd', $tijd);
+                                        $stmt->execute();
+                                        echo "<p class='text-center mt-5'>U heeft aangemeld.</p>";
+                                    } catch(PDOException $e) {
+                                        echo "Fout bij het aanmelden: " . $e->getMessage();
+                                    }
+                                }
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
+</div>
 
-    <h2 class="text-center mt-5 ">Aanmelden</h2>
-    <form method="POST" class="text-center mt-5 ">
-        <label for="voornaam">Voornaam:</label>
-        <input class="me-4" type="text" name="voornaam" id="voornaam" required><br><br>
-        
-        <label for="achternaam">Achternaam:</label>
-        <input class= "me-5" type="text" name="achternaam" id="achternaam" required><br><br>
-        
-        <label for="email">E-mail:</label>
-        <input class = "me-2" type="email" name="email" id="email" required><br><br>
+<script>
+    function validateStep(step) {
+        var currentStep = document.getElementById("step" + step);
+        var nextStep = document.getElementById("step" + (step + 1));
+        var formContainer = document.getElementById("formContainer");
 
-        <label for="datum">Datum:</label>
-        <input type="date" name="datum" id="datum" required><br><br>
-        
-        <label for="tijd">Beschikbare tijden:</label>
-        <select name="tijd" id="tijd" required>
-            <option value="9-15">9:00 - 15:00</option>
-            <option value="7-16">7:00 - 16:00</option>
-            <option value="7-16">7:00 - 16:00</option>
-        </select><br><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $voornaam = $_POST["voornaam"];
-        $achternaam = $_POST["achternaam"];
-        $email = $_POST["email"];
-        $datum = $_POST["datum"];
-        $tijd = $_POST["tijd"];
+        var inputs = currentStep.querySelectorAll("input[required], select[required]");
+        var isValid = true;
 
-        $volledigeNaam = $voornaam . " " . $achternaam;
-
-        $stmt = $conn->prepare("SELECT COUNT(*) FROM aanmelding WHERE email = :email AND datum = :datum AND tijd = :tijd");
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':datum', $datum);
-        $stmt->bindParam(':tijd', $tijd);
-        $stmt->execute();
-        $count = $stmt->fetchColumn();
-
-        if ($count > 0) {
-            ?> <p class="text-center mt-5"><?php echo "U heeft al aangemeld op deze dag en tijd."; ?></p> <?php
-        } else {
-            try {
-                $stmt = $conn->prepare("INSERT INTO aanmelding (naam, email, datum, tijd) VALUES (:volledigeNaam, :email, :datum, :tijd)");
-                $stmt->bindParam(':volledigeNaam', $volledigeNaam);
-                $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':datum', $datum);
-                $stmt->bindParam(':tijd', $tijd);
-                $stmt->execute();
-            } catch(PDOException $e) {
-                echo "Fout bij het aanmelden: " . $e->getMessage();
+        inputs.forEach(function(input) {
+            if (!input.value) {
+                isValid = false;
+                input.classList.add("is-invalid");
+            } else {
+                input.classList.remove("is-invalid");
             }
-            ?> <p class="text-center mt-5"><?php echo "U heeft aangemeld." ?></p> <?php
+        });
+
+        // Additional check for email validation
+        if (step === 2) {
+            var emailInput = document.getElementById("email");
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailInput.value)) {
+                isValid = false;
+                emailInput.classList.add("is-invalid");
+            }
+        }
+
+        if (isValid) {
+            formContainer.classList.remove("border-transition", "fade");
+            formContainer.style.borderColor = "transparent";
+            formContainer.style.opacity = "0";
+
+            setTimeout(function() {
+                currentStep.classList.remove("show");
+                formContainer.classList.add("slow-fade-out");
+                nextStep.classList.add("show");
+                formContainer.style.opacity = "1";
+                formContainer.style.borderColor = "";
+                formContainer.classList.add("border-transition", "fade");
+            }, 600);
         }
     }
-    ?>
+
+    function prevStep(step) {
+        var currentStep = document.getElementById("step" + step);
+        var prevStep = document.getElementById("step" + (step - 1));
+        var formContainer = document.getElementById("formContainer");
+
+        formContainer.classList.remove("border-transition", "fade");
+        formContainer.style.borderColor = "transparent";
+        formContainer.style.opacity = "0";
+
+        setTimeout(function() {
+            currentStep.classList.remove("show");
+            prevStep.classList.add("show");
+            formContainer.style.opacity = "1";
+            formContainer.style.borderColor = "";
+            formContainer.classList.add("border-transition", "fade");
+        }, 600);
+    }
+</script>
+
+        </div>
+    </div>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>   
-    <footer class="text-center text-white sticky-bottom" style= "background: linear-gradient(90deg, #0082ca, 50%, #280080); ">
-        <!-- Grid container -->
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <footer class="text-white footer text-center" style="background: linear-gradient(90deg, #0082ca, 50%, #0f2696);">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+        <!-- Section: Social media -->
+        <section class="mb-4">
             <!-- Facebook -->
-            <a
-                class="btn text-white btn-floating m-1"
-                style="background-color: #3b5998;"
-                href="https://www.facebook.com/rocvantwente"
-                role="button"
-                ><i class="fab fa-facebook-f"></i
-            ></a>
+            <a class="btn text-white btn-floating m-1" href="https://www.facebook.com/rocvantwente" role="button">
+                <img src="images/facebook_icon.svg" alt="Facebook Logo" style="max-width: 30px; max-height: 30px;" />
+            </a>
 
             <!-- Twitter -->
-            <a
-                class="btn text-white btn-floating m-1"
-                style="background-color: #55acee;"
-                href="https://twitter.com/rocvantwente"
-                role="button"
-                ><i class="fab fa-twitter"></i
-            ></a>
+            <a class="btn text-white btn-floating m-1" href="https://twitter.com/rocvantwente" role="button">
+                <img src="images/twitter_icon.svg" al   t="Twitter Logo" style="max-width: 30px; max-height: 30px;" />
+            </a>
 
-            <!-- YOUTUBE -->
-            <a
-                class="btn text-white btn-floating m-1"
-                style="background-color: #dd4b39;"
-                href="https://www.youtube.com/user/rocvantwente"
-                role="button"
-                ><i class="fab fa-youtube"></i
-            ></a>
+            <!-- YouTube -->
+            <a class="btn text-white btn-floating m-1" href="https://www.youtube.com/user/rocvantwente" role="button">
+                <img src="images/youtube_icon.svg" alt="YouTube Logo" style="max-width: 30px; max-height: 30px; " />
+            </a>
 
             <!-- Instagram -->
-            <a
-                class="btn text-white btn-floating m-1"
-                style="background-color: #ac2bac;"
-                href="https://www.instagram.com/rocvantwente/"
-                role="button"
-                ><i class="fab fa-instagram"></i
-            ></a>
+            <a class="btn text-white btn-floating m-1" href="https://www.instagram.com/rocvantwente/" role="button">
+                <img src="images/instagram_icon.svg" alt="Instagram Logo" style="max-width: 30px; max-height: 30px;" />
+            </a>
 
-            <!-- Linkedin -->
-            <a
-                class="btn text-white btn-floating m-1"
-                style="background-color: #0082ca;"
-                href="https://nl.linkedin.com/school/roc-van-twente/"
-                role="button"
-                ><i class="fab fa-linkedin-in"></i
-            ></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
+            <!-- LinkedIn -->
+            <a class="btn text-white btn-floating m-1" href="https://nl.linkedin.com/school/roc-van-twente/" role="button">
+                <img src="images/linkedin_icon.svg" alt="LinkedIn Logo" style="max-width: 30px; max-height: 50px;" />
+            </a>
+        </section>
+    </div>
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 ROC Van Twente
+    </div>
+    <!-- Copyright -->
+</footer>
 
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2023 Copyright:
-            <a class="text-white" href="https://www.rocvantwente.nl/">ROC Van Twente</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
 </body>
 </html>
