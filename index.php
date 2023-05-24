@@ -10,6 +10,9 @@ try {
 } catch(PDOException $e) {
     die("Kan geen verbinding maken met de database: " . $e->getMessage());
 }
+
+$minDatum = date('2023-05-26');
+$maxDatum = date('2023-05-30');
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,6 @@ try {
             margin-top: auto;
         }
     </style>
-<!--background-->
     <div class="background"></div>
         <style>
             .step {
@@ -81,25 +83,24 @@ try {
                         <a class="nav-link" href="https://www.rocvantwente.nl/leslocaties.html">Locaties</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://rondleiding.netlify.app/">tour</a>
+                        <a class="nav-link" href="https://rondleiding.netlify.app/">Tour</a>
                       <li class="nav-item dropdown">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">voor volwassenen</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Voor volwassenen</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item"en cursussen</a></li>
-                            <li><a class="dropdown-item" href= "https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en loopbaan</a></li>
+                            <li><a class="dropdown-item"en cursussen></a></li>
+                            <li><a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/werk-en-loopbaan.html">Werk en loopbaan</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li>
-                                <a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">ontdek alle studievormen</a></li>
+                                <a class="dropdown-item" href="https://www.rocvantwente.nl/voor-volwassenen/alle-opleidingen.html ">Ontdek alle studievormen</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-<!--logo-->
     <div class="text-center">
     <img src="images/roc-van-twente.png" alt="logo" style= "width: 170px; z-index: 0;" class="rounded mt-5">
     <style>
@@ -111,7 +112,6 @@ try {
         transition: opacity 0.6s ease;
     }
 
-    /* Add a custom CSS class to control the slow fade-out effect */
     .slow-fade-out {
         transition: opacity 2s ease;
         opacity: 0;
@@ -119,7 +119,6 @@ try {
 </style>
 
 
-<!-- Rest of the HTML code remains the same -->
 
 <div class="container">
     <div id="formContainer" class="border border-2 rounded p-4 mt-5 border-transition fade-transition" style="background-color: rgba(252, 250, 250, 0.8);">
@@ -151,7 +150,7 @@ try {
                             <div id="step3" class="step fade-transition">
                                 <div class="form-group">
                                     <label for="datum" class="form-label">Datum:</label>
-                                    <input style="color: #01368a;" class="form-control" type="date" name="datum" id="datum" required>
+                                    <input style="color: #01368a;" class="form-control" type="date" name="datum" id="datum" required min="<?php echo $minDatum; ?>" max="<?php echo $maxDatum; ?>"><br><br>
                                 </div>
                                 <div class="form-group">
                                     <label for="tijd" class="form-label">Beschikbare tijden:</label>
@@ -224,7 +223,6 @@ try {
             }
         });
 
-        // Additional check for email validation
         if (step === 2) {
             var emailInput = document.getElementById("email");
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
