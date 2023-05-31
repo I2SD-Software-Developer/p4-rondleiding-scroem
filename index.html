@@ -20,48 +20,31 @@
 <script>
 pannellum.viewer('panorama', {   
     "default": {
-        "firstScene": "lift",
+        "firstScene": "beneden-ingang",
         "sceneFadeDuration": 1000,
         "autoLoad": true,
     },
     
     "scenes": {
-        "lift": {
-            "type": "equirectangular",
-            "panorama": "asset/demo-1.jpg",
-            "showZoomCtrl": false,
-            "pitch": -9.318996005588108,
-            "yaw": -44.851059750622944,
-            "hotSpots": [
-                {
+        "beneden-ingang": {
+                    "type": "equirectangular",
+                    "panorama": "beneden-ingang.jpg",
+                    "showZoomCtrl": false,
                     "pitch": -9.318996005588108,
                     "yaw": -44.851059750622944,
-                    "type": "scene",
-                    "text": "Bank",
-                    "sceneId": "bank",
-                    "targetYaw": 240,
-                    "scale": true,
-                },
-                {
-                    "pitch": -13.352207309054576,
-                    "yaw": 96.36758767640615,
-                    "type": "info",
-                    "text": "monke",
-                    "sceneId": "bank",
-                    "targetYaw": 240,
-                    "scale": true,
-                },
-                {
-                    "pitch": -35.0253751624088,
-                    "yaw": -98.47535784968024,
-                    "type": "info",
-                    "text": "Hier is de foto een beetje gebugged.",
-                    "sceneId": "bank",
-                    "targetYaw": 240,
-                    "scale": true,
-                }
-            ],
-            "hotSpotDebug": false,
+                    "hotSpots": [
+                        {
+                            "pitch": -9.318996005588108,
+                            "yaw": -44.851059750622944,
+                            "type": "scene",
+                            "text": "Bank",
+                            "sceneId": "Roltrap",
+                            "targetYaw": 240,
+                            "scale": true,
+                        },
+
+                    ],
+                    "hotSpotDebug": false,
         },
 
         "bank": {
