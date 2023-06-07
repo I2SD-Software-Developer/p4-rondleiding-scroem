@@ -53,7 +53,7 @@ $loggedInUser = $_SESSION['username'];
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="klanten.php">Klanten</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="timeslot.php">Tijdslot</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 " href="../aanmeldpagina/index.php">website</a>
-
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 " href="logout.php">uit loggen</a>
         </div>
     </div>
     <!-- Page content wrapper-->
