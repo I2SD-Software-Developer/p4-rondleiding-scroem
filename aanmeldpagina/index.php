@@ -106,7 +106,16 @@ $maxDatum = date('2023-05-30');
     }
 </style>
 
+<?php
+// Assuming you have a script to establish the database connection
+include_once('connection.php');
 
+// Fetch the available dates from the database
+$sql = "SELECT * FROM available_dates";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$availableDates = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <div class="container">
     <div id="formContainer" class="border border-2 rounded p-4 mt-5 border-transition fade-transition" style="background-color: rgba(252, 250, 250, 0.8);">
@@ -138,7 +147,11 @@ $maxDatum = date('2023-05-30');
                             <div id="step3" class="step fade-transition">
                                 <div class="form-group">
                                     <label for="datum" class="form-label">Datum:</label>
-                                    <input style="color: #01368a;" class="form-control" type="date" name="datum" id="datum" required min="<?php echo $minDatum; ?>" max="<?php echo $maxDatum; ?>"><br><br>
+                                    <select class="form-control" name="datum" id="datum" required>
+                                      <?php foreach ($availableDates as $date): ?>
+                                        <option value="<?php echo $date['date']; ?>"><?php echo $date['date']; ?></option>
+                                      <?php endforeach; ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="tijd" class="form-label">Beschikbare tijden:</label>
