@@ -16,7 +16,7 @@ $loggedInUser = $_SESSION['username'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
@@ -49,12 +49,11 @@ $loggedInUser = $_SESSION['username'];
             </a>
         </div>
         <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="adminpage.php">Dashboard</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3 active" href="adminpage.php">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="klanten.php">Klanten</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="timeslot.php">Tijdslot</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 " href="../aanmeldpagina/index.php">website</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3 " href="logout.php">uit loggen</a>
-
         </div>
     </div>
     <!-- Page content wrapper-->
@@ -62,8 +61,23 @@ $loggedInUser = $_SESSION['username'];
         <!-- Top navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <button class="navbar-toggler" id="sidebarToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">                    
+                <button class="navbar-toggler" id="sidebarToggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <?php echo $loggedInUser; ?>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -73,37 +87,37 @@ $loggedInUser = $_SESSION['username'];
                 <div class="col-md-4">
                     <div class="card mb-4 custom-card" style="background-color: #55d985; color: white; font-size: larger;">
                         <div class="card-body">
-                        <?php
-                        include 'connection.php';
+                            <?php
+                            include 'connection.php';
 
-                        // Include your connection script
-                        try {
-                            // SQL query to count rows in "aanmeldingen" table
-                            $sql = "SELECT COUNT(*) AS total FROM aanmelding";
-                            $result = $conn->query($sql);
+                            // Include your connection script
+                            try {
+                                // SQL query to count rows in "aanmeldingen" table
+                                $sql = "SELECT COUNT(*) AS total FROM aanmelding";
+                                $result = $conn->query($sql);
 
-                            if ($result->rowCount() > 0) {
-                                $row = $result->fetch(PDO::FETCH_ASSOC);
-                                $totalRows = $row["total"];
-                                echo "Aantal klanten: <br>" . $totalRows;
-                            } else {
-                                echo "Geen klanten beschikbaar";
+                                if ($result->rowCount() > 0) {
+                                    $row = $result->fetch(PDO::FETCH_ASSOC);
+                                    $totalRows = $row["total"];
+                                    echo "Aantal klanten: <br>" . $totalRows;
+                                } else {
+                                    echo "Geen klanten beschikbaar";
+                                }
+                            } catch(PDOException $e) {
+                                echo "Error: " . $e->getMessage();
                             }
-                        } catch(PDOException $e) {
-                            echo "Error: " . $e->getMessage();
-                        }
 
-                        // Close connection (if required)
-                        $conn = null;
-                        ?>
+                            // Close connection (if required)
+                            $conn = null;
+                            ?>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card mb-4 custom-card" style="background-color: #5498f0;; color: white; font-size: larger;">
                         <div class="card-body">
-                            <?php 
-                             include 'connection.php';
+                            <?php
+                            include 'connection.php';
 
                             // SQL query to find the highest ID value
                             $sqlMaxID = "SELECT MAX(id) AS max_id FROM aanmelding";
@@ -123,7 +137,7 @@ $loggedInUser = $_SESSION['username'];
                 <div class="col-md-4">
                     <div class="card mb-4 custom-card" style="background-color: #f05454; color: white; font-size: larger;">
                         <div class="card-body">
-                        <?php
+                            <?php
                             // Include your connection script
                             include 'connection.php';
 
@@ -131,7 +145,7 @@ $loggedInUser = $_SESSION['username'];
                                 // SQL query to count rows in "available_dates" table
                                 $sqlCount = "SELECT COUNT(*) AS total FROM available_dates";
                                 $resultCount = $conn->query($sqlCount);
-                            
+
                                 if ($resultCount->rowCount() > 0) {
                                     $rowCount = $resultCount->fetch(PDO::FETCH_ASSOC);
                                     $totalDates = $rowCount["total"];
@@ -146,7 +160,6 @@ $loggedInUser = $_SESSION['username'];
                             // Close connection (if required)
                             $conn = null;
                             ?>
-
                         </div>
                     </div>
                 </div>

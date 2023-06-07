@@ -9,7 +9,7 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login page after logging out
-header("Location: ../aanmeldpagina/index.php"); // Replace "login.php" with the actual login page URL
+header("Location: ../aanmeldpagina/login.php"); // Replace "login.php" with the actual login page URL
 exit;
 
 ?>
