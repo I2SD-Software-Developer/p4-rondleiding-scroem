@@ -97,33 +97,75 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Execute the statement
     $stmt->execute();
 
-    // Close the statement and the database connection
+}
+?>
+
+<?php
+$query = "SELECT * FROM `available_dates`";
+$result = $conn->query($query);
+
+?>
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <?php if ($result->rowCount() > 0): ?>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Datum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = $result->fetch(PDO::FETCH_ASSOC)): ?>
+                            <tr>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['date']; ?></td>
+                                <td>                                    
+                                    <div class="max-width-td">
+                                    </div></td>
+                                <td>
+                                    <form method="post" action="deltime.php">
+                                        <input type="hidden" name="delete" value="<?php echo $row['id']; ?>">
+                                        <input type="submit" class="btn btn-danger" value="Delete">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <p>No data found.</p>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+<?php
+// Check if the form is submitted and the 'date' field is not empty
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['date'])) {
+    // Retrieve the submitted form data
+    $date = $_POST['date'];
+
+    // Prepare the SQL statement
+    $sql = "INSERT INTO available_dates (date) VALUES (:date)";
+
+    // Prepare and bind the statement
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(":date", $date);
+
+    // Execute the statement
+    $stmt->execute();
+
+    // Close the statement
     $stmt = null;
-    $conn = null;
 
     // Redirect to the admin panel page or show a success message
     exit();
 }
 ?>
 
-<?php
-// Assuming you have a script to establish the database connection
-include_once('connection.php');
 
-// Fetch the available dates from the database
-$sql = "SELECT * FROM available_dates";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$availableDates = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-                                    <label for="datum" class="form-label">Datum:</label>
-                                    <select class="form-control" name="datum" id="datum" required>
-                                      <?php foreach ($availableDates as $date): ?>
-                                        <option value="<?php echo $date['date']; ?>"><?php echo $date['date']; ?></option>
-                                      <?php endforeach; ?>
-                                    </select>
-    </div>
-</div>
 <!-- Bootstrap core JS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
